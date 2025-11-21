@@ -13,7 +13,7 @@ caption = todays_api_call.json()["explanation"]
 caption = f"""
 <b>🌅 Good Morning JB, today is a new day!</b>
 
-<b>{title}🚀💫🌍</b>
+<b>{title} 🚀💫🌍</b>
 
 📝 <b>Description:</b>
 {caption}
