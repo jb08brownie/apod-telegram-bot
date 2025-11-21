@@ -3,7 +3,7 @@ name: Send APOD
 on:
   schedule:
     # Every day at 08:00 UTC (adjust as needed)
-    - cron: "0 8 * * *"
+    - cron: "30 6 * * *"
   workflow_dispatch:   # allows manual runs
 
 jobs:
