@@ -2,8 +2,8 @@ name: Send APOD
 
 on:
   schedule:
-    # Every day at 08:00 UTC (adjust as needed)
-    - cron: "30 6 * * *"
+    - cron: "30 6 * 10-3 *"   # Winter: Oct–Mar
+    - cron: "30 5 * 4-9 *"    # Summer: Apr–Sep
   workflow_dispatch:   # allows manual runs
 
 jobs:
