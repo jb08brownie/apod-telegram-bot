@@ -2,8 +2,13 @@ name: Send APOD
 
 on:
   schedule:
-    - cron: "30 6 * 10-3 *"   # Winter: Oct–Mar
-    - cron: "30 5 * 4-9 *"    # Summer: Apr–Sep
+    # Winter (Oct–Dec)
+    - cron: "30 6 * 10-12 *"
+    # Winter (Jan–Mar)
+    - cron: "30 6 * 1-3 *"
+    # Summer (Apr–Sep)
+    - cron: "30 5 * 4-9 *"
+
   workflow_dispatch:   # allows manual runs
 
 jobs:
