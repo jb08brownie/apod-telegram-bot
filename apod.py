@@ -19,7 +19,7 @@ caption = f"""
 📝 <b>Description:</b>
 {caption}
 
-<b>High Res📸:
+<b>High Res📸:</b>
 {hd_image}
 """
 
