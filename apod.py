@@ -8,7 +8,6 @@ nasa_api_key = os.getenv("NASA_API_KEY")
 todays_api_call = requests.get(f"https://api.nasa.gov/planetary/apod?api_key={nasa_api_key}")
 image = todays_api_call.json()["url"]
 title = todays_api_call.json()["title"]
-hd_image = todays_api_call.json()["hdurl"]
 caption = todays_api_call.json()["explanation"]
 
 caption = f"""
@@ -18,9 +17,6 @@ caption = f"""
 
 📝 <b>Description:</b>
 {caption}
-
-<b>High Res📸:</b>
-{hd_image}
 """
 
 requests.get(f"https://api.telegram.org/bot{bot_token}/sendPhoto", 
