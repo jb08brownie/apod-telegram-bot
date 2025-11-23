@@ -10,20 +10,47 @@ image = todays_api_call.json()["url"]
 title = todays_api_call.json()["title"]
 caption = todays_api_call.json()["explanation"]
 
-caption = f"""
-<b>🌅 Good Morning JB, today is a new day!</b>
+if len(caption) > 1000:
 
-<b>{title} 🚀💫🌍</b>
+    image_msg = f"""<b>🌅 Good Morning JB, today is a new day!</b>"""
+
+    text_msg = f"""<b>{title} 🚀💫🌍</b>
 
 📝 <b>Description:</b>
 {caption}
-"""
+    """
 
-requests.get(f"https://api.telegram.org/bot{bot_token}/sendPhoto", 
-             params={
+    send_img = requests.get(f"https://api.telegram.org/bot{bot_token}/sendPhoto", 
+                params={
+                "chat_id": chat_id,
+                "photo": image,
+                "caption": image_msg,
+                "parse_mode": "HTML"
+                }
+        )
+
+    send_caption = requests.get(f"https://api.telegram.org/bot{bot_token}/sendMessage",
+                                params={
+                                    "chat_id": chat_id,
+                                    "text": text_msg,
+                                    "parse_mode": "HTML"
+                                }
+    )
+
+else:
+    msg = f"""<b>🌅 Good Morning JB, today is a new day!</b>
+
+<b>{title}🚀💫🌍</b>
+
+<b>📝 Description: </b>
+{caption}
+    """
+    send_img = requests.get(f"https://api.telegram.org/bot{bot_token}/sendPhoto", 
+            params={
             "chat_id": chat_id,
             "photo": image,
-            "caption": caption,
+            "caption": msg,
             "parse_mode": "HTML"
-             }
+            }
     )
+
