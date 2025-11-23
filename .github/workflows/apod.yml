@@ -1,9 +1,9 @@
 name: Send APOD
 
 on:
-  schedule:
+  #schedule:
     # Winter (Oct–Dec)
-    - cron: "30 10 * * *"
+    #- cron: "30 10 * * *"
 
   workflow_dispatch:   # allows manual runs
 
